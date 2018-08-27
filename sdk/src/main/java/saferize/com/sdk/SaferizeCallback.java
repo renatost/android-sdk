@@ -7,7 +7,7 @@ import android.os.ResultReceiver;
 import com.saferize.sdk.Approval;
 import com.saferize.sdk.SaferizeSession;
 
-import java.util.function.Consumer;
+
 
 import static saferize.com.sdk.SaferizeService.*;
 

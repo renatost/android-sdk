@@ -3,7 +3,7 @@ package saferize.com.sdk;
 import android.app.IntentService;
 import android.app.Service;
 import android.content.Intent;
-import android.content.Context;
+
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -18,14 +18,11 @@ import com.saferize.sdk.SaferizeClientException;
 import com.saferize.sdk.SaferizeSession;
 import com.saferize.sdk.WebsocketException;
 
-import org.eclipse.jetty.websocket.api.WebSocketException;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+
+
 
 public class SaferizeService extends Service {
 
@@ -82,7 +79,7 @@ public class SaferizeService extends Service {
     }
 
     public void init(Configuration configuration) throws WebsocketException, AuthenticationException {
-        client = new SaferizeClient(configuration);
+        client = new SaferizeClient (configuration);
     }
 
 
@@ -117,7 +114,7 @@ public class SaferizeService extends Service {
     public void startWebSocket(SaferizeCallback callback) {
         pool.submit(() -> {
             try {
-                client.onConnect(session -> sendResult(CONNECT_CALLBACK_CODE, callback, session));
+                client.onConnect( session ->  sendResult(CONNECT_CALLBACK_CODE, callback, session) );
                 client.onDisconnect(session -> sendResult(DISCONNECT_CALLBACK_CODE, callback, session));
                 client.onError(session -> sendResult(ERROR_CALLBACK_CODE, callback, session));
                 client.onPause(session -> sendResult(PAUSE_CALLBACK_CODE, callback, session));
