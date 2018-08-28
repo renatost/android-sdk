@@ -68,7 +68,7 @@ public class ExampleInstrumentedTest {
             "Hq6/JLerN9xKQwFq+mqYDe7NPMCa2jin5Wc/EGQWzVzBt+dIEZE63w==\n" +
             "-----END RSA PRIVATE KEY-----";
 
-    private static final String SERVER_URL = "http://api.dev.saferize";
+    private static final String SERVER_URL = "http://10.0.2.2:8080";
     //private static final String SERVER_URL = "http://192.168.11.250";
     private static final String WEBSOCKET_URL = "ws://websocket.dev.saferize/usage";
 

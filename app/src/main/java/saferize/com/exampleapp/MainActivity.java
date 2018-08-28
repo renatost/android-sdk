@@ -70,7 +70,8 @@ public class MainActivity extends AppCompatActivity implements ServiceConnection
             "-----END RSA PRIVATE KEY-----";
 
 
-    private static final String SERVER_URL = "http://api.dev.saferize";
+    //private static final String SERVER_URL = "http://api.dev.saferize";
+    private static final String SERVER_URL = "http://10.0.2.2:8080";
     private static final String WEBSOCKET_URL = "ws://websocket.dev.saferize/usage";
 
 
